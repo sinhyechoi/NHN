@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    //풋터 .sub_co_lst
+    //푸터 .sub_co_lst
     $('.sub_co_lst > li').mouseenter(function(){
         $(this).addClass('active');
     })
@@ -7,7 +7,7 @@ $(document).ready(function(){
         $(this).removeClass('active');
     });
 
-//각 section의 위에서부터의 거리를 알아온다
+    //각 section의 위에서부터의 거리를 알아온다
     var pos = [];   // 변수 pos는 배열
     for( var i = 1 ; i<7 ; i++ ){ 
         pos.push($(`#section${i}`).offset().top);
@@ -19,7 +19,7 @@ $(document).ready(function(){
         var scrollH = $(window).scrollTop();  //스크롤 된 거리를 변수에
         $('.s_num').text(scrollH);            //스크롤 된 거리를 화면에 나오게
 
-      //스크롤 시 리모튼 버튼 색상변화(클라스 삽입)
+    //스크롤 시 리모튼 버튼 색상변화(클라스 삽입)
         if(scrollH < pos[1]){
             $('#remote a').removeClass('on');
             $('#remote a').eq(0).addClass('on');    //0과 같은 순서의 버튼a(첫번째 a)
@@ -51,7 +51,7 @@ $(document).ready(function(){
         var ttt = this.hash;    //클릭한 #(해쉬) 값을 변수에 넣는다
         console.log(`클릭한 remote 의 해쉬값은? ${ttt}`);
 
-        var thisSecH = $(ttt).offset().top;  //클릭한 section의 위에서부터의 거리를 변수에
+        var thisSecH = $(ttt).offset().top;  //클릭한 section의 위에서부터 거리를 변수에
         $('html,body').animate({scrollTop:thisSecH},500,'swing');
     });
 
@@ -77,5 +77,5 @@ $(window).scrollTop()   :화면의 스크롤이 얼마되었는지 가져오거�
 A.offset().top          :A가 브라우저의 제일 위에서 부터 얼마 떨어져있나를 구한다
 A.push(B)               :B를 A배열의 끝에 배열값으로 추가
 A.index()               :몇번째 A인지 알아온다(0부터시작)
-A.eq(b)     - b와 같은 순서의 A (ex,3번째 A)
+A.eq(b)                 :b와 같은 순서의 A (ex,3번째 A)
 */
